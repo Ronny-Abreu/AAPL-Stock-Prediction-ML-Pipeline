@@ -1,0 +1,66 @@
+Librerias necesarias para el proyecto:
+
+- alpaca-py
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
+- python-dotenv
+- ipykernel
+
+#Antes de ejecutar el proyecto como se está utilizando entornos virtuales como venv, debes crear y activar el suyo antes de correr este comando.
+
+"Paso a seguir: Crear su propio archivo .env"
+#Debes crear un archivo .env nuevo en su computadora y colocar las credenciales de Alpaca(las que se envío en privado). Con el siguiente formato: API_KEY="" / SECRET_KEY=""
+
+"Ejecutar el siguiente comando para instalar las librerias necesarias:
+pip install -r requirements.txt"
+
+|------------------------------------------------------------------------------------------------------|
+|PASOS A SEGUIR LUEGO DE INSTALAR LAS LIBRERIAS:                                                        |
+
+|1. REGISTRARSE EN ALPACA Markets (sección "Paper Trading").                                       |
+|2. CREAR UN ARCHIVO .ENV EN LA RAIZ DEL PROYECTO Y AGREGAR LAS CREDENCIALES DE LA API DE ALPACA:
+API_KEY y SECRET_KEY
+
+|3. EJECUTAR EL ARCHIVO Prediccion_AAPL.ipynb PARA EJECUTAR EL PROYECTO.
+
+- Para reducir la latencia y crear resiliencia contra fallos de red o límites de la API. Usamos la caché local para evitar límites de la API de Alpaca definido en "csv_path = Path("aapl_raw.csv")".
+
+|------------------------------------------------------------------------------------------------------|
+|PASO A SEGUIR LUEGO DE EJECUTAR EL ARCHIVO Prediccion_AAPL.ipynb:      
+#VS Code le pedirá seleccionar un Kernel. Debe hacer clic en la esquina superior derecha y seleccionar su instalación local de Python.
+                                 |
+PLAN A SEGUIR POR FASES:
+
+"[Celda 1] COMPLETADO ✅
+Fase 1: Recolección de Datos"
+
+# Código que hace los import, configura las credenciales de Alpaca API y descarga el dataset df.
+
+--------
+"[Celda 2] COMPLETADO✅
+Fase 2: Preprocesamiento"
+
+# Código que hace el Feature Engineering (SMA_5, SMA_10), crea el Target con shift(-1) y normaliza con StandardScaler.
+
+--------
+"[Celda 3] COMPLETADO✅
+Fase 3: Análisis Exploratorio de Datos (EDA)"
+
+# Código de matplotlib y seaborn que genera los gráficos (heatmap, histograma, etc.)
+
+--------
+"[Celda 4] Fase 4: Entrenamiento de Modelos" - PENDIENTE
+
+# Código del train_test_split y el bucle for que entrena los 8 modelos requeridos (Ridge, Lasso, SVM, Random Forest, etc.).
+
+--------
+"[Celda 5] Fase 5: EvaluaciónPega" - PENDIENTE
+
+# Código que calcula el MAE, MSE, RMSE y R^2 y muestra la tabla de resultados.
+
+--------
+"[Celda 6] Fase 6: Predicción con Nuevos Datos" - PENDIENTE
+# Función predecir_nuevo_csv y el código para probarla.
